@@ -1,0 +1,3 @@
+[submodule "Dojo"]
+	path = Dojo
+	url = https://github.com/squkall/Dojo
