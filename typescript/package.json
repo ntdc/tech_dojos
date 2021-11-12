@@ -1,13 +1,13 @@
 {
-  "name": "dojo",
+  "name": "katas",
   "version": "1.0.0",
-  "description": "",
+  "description": "NTATC Tech Dojos Katas",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "jest": "^27.2.5"
   }
