@@ -66,4 +66,18 @@ public class LeapYearsTest {
 		// Then
 		Assertions.assertFalse(response);
 	}
+	
+	@Test
+	void shouldReturnFalseWhenAtypicalCommonYearIs1800() {
+
+		// Given
+		int year = 1800;
+		LeapYear leapYears = new LeapYear();
+
+		// When
+		boolean response = leapYears.isLeapYears(year);
+
+		// Then
+		Assertions.assertFalse(response);
+	}
 }
