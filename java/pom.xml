@@ -7,8 +7,9 @@
     <groupId>com.ntatc</groupId>
     <artifactId>katas</artifactId>
     <version>1.0-SNAPSHOT</version>
-	<name>katas</name>
-    <description>NTATC Tech Dojos Katas </description>
+	<name>katas
+    </name>
+    <description>NTATC Tech Dojos Katas</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
