@@ -13,7 +13,7 @@
 
 const isLeapYear = require("./index");
 
-test("should return false when typical common year", () => {
+test("should return false when typical common year 2001", () => {
     
     // Given
     const annee = 2001;
@@ -24,10 +24,21 @@ test("should return false when typical common year", () => {
 });
 
 
-test("should return true when typical leap year", () => {
+test("should return true when typical leap year 1996", () => {
     
     // Given
     const annee = 1996;
+    // When
+    const leapYear = isLeapYear(annee)
+    // Then
+    expect(leapYear).toBe(true);
+});
+
+
+test("should return true when typical leap year 1992", () => {
+    
+    // Given
+    const annee = 1992;
     // When
     const leapYear = isLeapYear(annee)
     // Then
