@@ -10,7 +10,7 @@
 // All years divisible by 400 ARE leap years
 
 function isLeapYear(annee){
-  return annee === 1996 ? true : false; 
+  return annee%4 === 0; 
 }
 module.exports = isLeapYear
 

@@ -44,3 +44,13 @@ test("should return true when typical leap year 1992", () => {
     // Then
     expect(leapYear).toBe(true);
 });
+
+test("should return false when atypical common year 1990", () => {
+    
+    // Given
+    const annee = 1990;
+    // When
+    const leapYear = isLeapYear(annee)
+    // Then
+    expect(leapYear).toBe(false);
+});
