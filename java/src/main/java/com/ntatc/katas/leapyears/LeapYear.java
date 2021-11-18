@@ -4,7 +4,7 @@ public class LeapYear {
 
 	public boolean isLeapYears(int year) {
 
-		return isTypicalLeapYears(year);
+		return isTypicalLeapYears(year) && year != 1900;
 	}
 
 	private boolean isTypicalLeapYears(int year) {

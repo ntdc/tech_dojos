@@ -3,6 +3,7 @@ package com.ntatc.katas.leapyears;
 import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LeapYearsTest {
@@ -18,7 +19,7 @@ public class LeapYearsTest {
 		boolean response = leapYears.isLeapYears(year);
 		
 		// Then
-		assertFalse(response);
+		Assertions.assertFalse(response);
 		
 	}
 
@@ -50,5 +51,19 @@ public class LeapYearsTest {
 		// Then
 		assertTrue(response);
 
+	}
+
+	@Test
+	void shouldReturnFalseWhenAtypicalCommonYearIs1900() {
+
+		// Given
+		int year = 1900;
+		LeapYear leapYears = new LeapYear();
+
+		// When
+		boolean response = leapYears.isLeapYears(year);
+
+		// Then
+		Assertions.assertFalse(response);
 	}
 }
