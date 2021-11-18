@@ -10,7 +10,14 @@
 // All years divisible by 400 ARE leap years
 
 function isLeapYear(annee){
-  return annee%4 === 0; 
+  return isDivisibledByFour(annee) && !isDivisibledByOneHundred(annee); 
 }
+
+// Vérifie si l'année est divisible par 4
+const isDivisibledByFour = (annee) => annee%4 === 0;
+
+// Vérifie si l'année est divisible par 100
+const isDivisibledByOneHundred = (annee) => annee%100 === 0;
+
 module.exports = isLeapYear
 
