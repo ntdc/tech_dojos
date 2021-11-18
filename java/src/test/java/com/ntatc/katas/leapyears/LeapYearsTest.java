@@ -36,4 +36,19 @@ public class LeapYearsTest {
 		assertTrue(response);
 
 	}
+	
+	@Test
+	void shouldReturnTrueWhenTypicalLeapYearsIs1992() {
+
+		// Given
+		int year = 1992;
+		LeapYear leapYears = new LeapYear();
+
+		// When
+		boolean response = leapYears.isLeapYears(year);
+
+		// Then
+		assertTrue(response);
+
+	}
 }
