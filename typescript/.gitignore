@@ -31,4 +31,5 @@ build/
 .vscode/
 *.code-workspace
 
+### Node ###
 node_modules/
