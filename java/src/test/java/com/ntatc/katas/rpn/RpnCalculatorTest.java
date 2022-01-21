@@ -32,4 +32,18 @@ public class RpnCalculatorTest {
 		// Then.
 		Assertions.assertThat(result).isEqualTo(2);
 	}
+
+	@Test
+	@DisplayName("Test que lorsqu'on envoie 1 2 +, on récupère 3")
+	void should_compute_3_for_input_1_2_ADD(){
+		// Given.
+		String input = "1 2 +";
+
+		// When.
+		RpnCalculator rpnCalculator = new RpnCalculator();
+		int result = rpnCalculator.compute(input);
+
+		// Then.
+		Assertions.assertThat(result).isEqualTo(3);
+	}
 }
