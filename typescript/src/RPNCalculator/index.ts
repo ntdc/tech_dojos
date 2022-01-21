@@ -3,7 +3,9 @@ export class RPNCalculator {
     private operations = {
         "+": new Add(),
         "-": new Subtract(),
-        "*": new Multiply()
+        "*": new Multiply(),
+        "/": new Divide(),
+        "SQRT": new SquareRoot()
     }
 
     calculate(param: string): number {
@@ -11,9 +13,19 @@ export class RPNCalculator {
         const params: string[] = param.split(' ');
 
         if (params.length > 1) {
-            const operateur: string = params[2];
-            this.operation = this.operations[operateur];
-            result = this.operation.calculate(this.parseInt(params[0]), this.parseInt(params[1]));
+            const partCalcul: number[] = [];
+            params.forEach(param => {
+                const operateurs = Object.keys(this.operations);
+                if (operateurs.includes(param)) {
+                    const secondNumber = partCalcul.pop();
+                    const firstNumber = partCalcul.pop();
+                    this.operation = this.operations[param];
+                    result = this.operation.calculate(firstNumber, secondNumber);
+                    partCalcul.push(result);
+                } else {
+                    partCalcul.push(parseInt(param));
+                }
+            });
         } else {
             result = parseInt(param);
         }
@@ -44,5 +56,17 @@ export class Subtract implements Operation {
 export class Multiply implements Operation {
     calculate(nombre1: number, nombre2: number): number {
         return nombre1 * nombre2;
+    }
+}
+
+export class Divide implements Operation {
+    calculate(nombre1: number, nombre2: number): number {
+        return nombre1 / nombre2;
+    }
+}
+
+export class SquareRoot implements Operation {
+    calculate(nombre1: number, nombre2: number): number {
+        return Math.sqrt(nombre2) ;
     }
 }
