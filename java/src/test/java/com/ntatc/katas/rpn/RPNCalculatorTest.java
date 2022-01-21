@@ -65,5 +65,19 @@ public class RPNCalculatorTest {
         assertThat(actual).isEqualTo(10);
     }
 
+    @Test
+    @DisplayName("Should return 10 when input is 50 5 /")
+    public void shouldReturn10WhenInputIs50_10_divide() {
+        //Given
+        var calculator = new RPNCalculator();
+        String expression = "50 5 /";
+
+        //When
+        int actual = calculator.calculate(expression);
+
+        //Then
+        assertThat(actual).isEqualTo(10);
+    }
+
 
 }

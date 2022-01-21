@@ -38,9 +38,10 @@ public class RPNCalculator {
     }
 
     private enum Operation {
-        ADD("+", (a,b) -> a+b),
-        SUB("-",(a,b) -> a-b),
-        MULTIPLY("*",(a,b) -> a*b);
+        ADD("+", (a, b) -> a + b),
+        SUB("-", (a, b) -> a - b),
+        DIVIDE("/", (a, b) -> a / b),
+        MULTIPLY("*", (a, b) -> a * b);
 
         private final String symbol;
         private final BinaryOperator<Integer> calculate;
