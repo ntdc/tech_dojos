@@ -1,5 +1,6 @@
 package com.ntatc.katas.rpn;
 
+import com.ntatc.katas.leapyears.rpn.RPNCalculator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -64,48 +65,5 @@ public class RPNCalculatorTest {
         assertThat(actual).isEqualTo(10);
     }
 
-    private class RPNCalculator {
 
-        private static final String SPACE = " ";
-
-        public int calculate(String expression) {
-            String[] expressions = expression.split(SPACE);
-
-            if (isAnOperation(expressions)) {
-                int leftOperand = extractLeftOperand(expressions);
-                int rightOperand = extractRightOperand(expressions);
-
-                if (isAnAddition(expressions)) {
-                    return leftOperand + rightOperand;
-                } else if (isASubstraction(expressions)) {
-                    return leftOperand - rightOperand;
-                } else {
-                    return leftOperand * rightOperand;
-                }
-            }
-
-            return Integer.parseInt(expression);
-        }
-
-        private boolean isAnAddition(String[] expressions) {
-            return expressions[2].equals("+");
-        }
-
-        private boolean isASubstraction(String[] expressions) {
-            return expressions[2].equals("-");
-        }
-
-        private boolean isAnOperation(String[] expressions) {
-            return expressions.length > 1;
-        }
-
-        private int extractRightOperand(String[] expressions) {
-            return Integer.parseInt(expressions[1]);
-        }
-
-        private int extractLeftOperand(String[] expressions) {
-            return Integer.parseInt(expressions[0]);
-        }
-
-    }
 }
