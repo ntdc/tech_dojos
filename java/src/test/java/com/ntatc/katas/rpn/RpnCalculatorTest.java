@@ -18,4 +18,18 @@ public class RpnCalculatorTest {
 		// Then.
 		Assertions.assertThat(result).isEqualTo(1);
 	}
+	
+	@Test
+	@DisplayName("Test que lorsqu'on envoie 2, on récupère 2")
+	void should_compute_2_for_input_2(){
+		// Given.
+		String input = "2";
+		
+		// When.
+		RpnCalculator rpnCalculator = new RpnCalculator();
+		int result = rpnCalculator.compute(input);
+		
+		// Then.
+		Assertions.assertThat(result).isEqualTo(2);
+	}
 }
