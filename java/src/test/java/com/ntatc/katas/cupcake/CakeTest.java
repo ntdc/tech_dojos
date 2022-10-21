@@ -5,7 +5,6 @@ import com.ntatc.katas.cupcake.decorator.NutsDecorator;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -142,4 +141,14 @@ class CakeTest {
     assertEquals(BigDecimal.valueOf(2.2), price);
   }
 
+  @Test
+  void shouldReturnCupcakeBundlePrice() {
+    // GIVEN
+    CakeBundle cakeBundle = new CakeBundle();
+    cakeBundle.add(new Cupcake());
+    // WHEN
+    var price = cakeBundle.price();
+    // THEN
+    assertEquals(BigDecimal.valueOf(0.9), price);
+  }
 }
