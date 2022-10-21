@@ -17,7 +17,11 @@ public class CakeBundle implements Cake {
         return "";
     }
 
+    @Override
     public BigDecimal price() {
-        return cakes.stream().map(Cake::price).reduce(BigDecimal.ZERO,BigDecimal::add).multiply(BigDecimal.valueOf(0.9));
+        return cakes.stream()
+                .map(Cake::price)
+                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                .multiply(new BigDecimal("0.9"));
     }
 }
