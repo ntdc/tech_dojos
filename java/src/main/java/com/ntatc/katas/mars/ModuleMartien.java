@@ -8,9 +8,9 @@ public interface ModuleMartien {
 
     void reculer();
 
-    void monter(); // Interface segregation
+    void monter();
 
-    void descendre(); // Interface segregation
+    void descendre();
 
     void activerRecuperation();
 

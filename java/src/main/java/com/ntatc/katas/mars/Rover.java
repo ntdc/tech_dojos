@@ -2,8 +2,6 @@ package com.ntatc.katas.mars;
 
 public class Rover implements ModuleMartien {
 
-    // Open Close : obliger de modifier si on veut ajouter une direction
-
     private Direction direction;
 
     protected Position position;
