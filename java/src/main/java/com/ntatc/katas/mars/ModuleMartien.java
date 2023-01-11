@@ -8,9 +8,9 @@ public interface ModuleMartien {
 
     void reculer();
 
-    void monter();
+    void monter();  // FIXME : Interface Segregation - Un module martien ne peut pas forcément voler
 
-    void descendre();
+    void descendre();   // FIXME : Interface Segregation - Un module martien ne peut pas forcément voler
 
     void activerRecuperation();
 

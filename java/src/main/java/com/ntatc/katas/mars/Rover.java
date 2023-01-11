@@ -13,6 +13,8 @@ public class Rover implements ModuleMartien {
         this.position = position;
     }
 
+    // FIXME : Open Close - Obliger de modifier la classe si on veut ajouter une direction
+    //  Le switch peut nous aider à identifier rapidemment cette violation
     public void avancer() {
         switch (direction) {
             case NORD:
@@ -48,12 +50,13 @@ public class Rover implements ModuleMartien {
     @Override
     public void monter() {
         throw new UnsupportedOperationException("Un rover ne vole pas");
-    }
+    } // FIXME : Conséquence de la violation Interface Segregation dans ModuleMartien
+
 
     @Override
     public void descendre() {
         throw new UnsupportedOperationException("Un rover ne vole pas");
-    }
+    } // FIXME : Conséquence de la violation Interface Segregation dans ModuleMartien
 
     public void activerRecuperation() {
         pretPourRecuperation = true;
