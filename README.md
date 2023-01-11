@@ -14,6 +14,8 @@ To be effective, try to limit the number of people in a group :arrow_right: on a
 
 ## Mission to mars non SOLID
 
+Support PPT pour la partie théorique : https://ts.accenture.com/:p:/s/NTATCIESCustom-TechDojo/EQ9w1yXRm0FHrsyAQXi3aWQBFQ4CdG09tzNNXpS8OR2BPA?e=J54x13
+
 Language Java - Package com.ntatc.katas.mars
 
 Mission vers mars 2021 ave rover et hélicoptère
