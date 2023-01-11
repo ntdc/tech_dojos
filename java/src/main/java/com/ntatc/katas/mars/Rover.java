@@ -1,6 +1,7 @@
 package com.ntatc.katas.mars;
 
-public class Rover implements ModuleMartien {
+
+public class Rover implements ModuleMartien2D {
 
     private Direction direction;
 
@@ -13,50 +14,16 @@ public class Rover implements ModuleMartien {
         this.position = position;
     }
 
-    // FIXME : Open Close - Obliger de modifier la classe si on veut ajouter une direction
-    //  Le switch peut nous aider à identifier rapidemment cette violation
+    // Open Close OK - Avec le pattern strategy implémenté à travers l'ENUM Direction,
+    // plus besoin de modifier cette classe pour ajouter une direction
+
     public void avancer() {
-        switch (direction) {
-            case NORD:
-                position = new Position(position.getX(), position.getY() + 1, position.getZ());
-                break;
-            case SUD:
-                position = new Position(position.getX(), position.getY() - 1, position.getZ());
-                break;
-            case OUEST:
-                position = new Position(position.getX() - 1, position.getY(), position.getZ());
-                break;
-            default:
-                position = new Position(position.getX() + 1, position.getY(), position.getZ());
-        }
+        position = direction.getMouvement2D().avancer(position);
     }
 
     public void reculer() {
-        switch (direction) {
-            case NORD:
-                position = new Position(position.getX(), position.getY() - 1, position.getZ());
-                break;
-            case SUD:
-                position = new Position(position.getX(), position.getY() + 1, position.getZ());
-                break;
-            case OUEST:
-                position = new Position(position.getX() + 1, position.getY(), position.getZ());
-                break;
-            default:
-                position = new Position(position.getX() - 1, position.getY(), position.getZ());
-        }
+        position = direction.getMouvement2D().reculer(position);
     }
-
-    @Override
-    public void monter() {
-        throw new UnsupportedOperationException("Un rover ne vole pas");
-    } // FIXME : Conséquence de la violation Interface Segregation dans ModuleMartien
-
-
-    @Override
-    public void descendre() {
-        throw new UnsupportedOperationException("Un rover ne vole pas");
-    } // FIXME : Conséquence de la violation Interface Segregation dans ModuleMartien
 
     public void activerRecuperation() {
         pretPourRecuperation = true;
