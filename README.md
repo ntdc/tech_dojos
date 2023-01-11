@@ -12,9 +12,11 @@ Some of the advantages of practicing code katas:
 
 To be effective, try to limit the number of people in a group :arrow_right: on a 10+ people group, not everybody will be able to participate, sad ! :lying_face:
 
-## Mission to mars non solid
+## Mission to mars non SOLID
 
-Mission vers mars 2021, rover et hélicoptère (version non SOLID)
+Language Java - Package com.ntatc.katas.mars
+
+Mission vers mars 2021 ave rover et hélicoptère
 
 2 modules sont posés sur Mars :
 * par rapport à une position 3D (origine en bas, à gauche) ;
@@ -34,3 +36,20 @@ L'exercice est :
 * de détecter les 4 violations
 * de rendre le programme SOLID ;
 * d'ajouter la direction "nord ouest", et faire avancer/reculer les deux modules suivant cette direction.
+
+## Tire pressure monitoring
+
+Language Java - Package com.ntatc.katas.tire
+
+Grâce à la mission vers Mars non SOLID, les principes SOLI ont pu être abordés. Il manque le D pour Dependency Inversion. Ce kata l'illustre avec en prime une touche de TDD.
+
+Le programme : 
+* La classe Alarm permet de surveiller la pression d'un pneu et déclenche une alerte si la pression sort d'un interval min/max.
+* La classe Sensor simule le comportement d'un vrai capteur de pneu, fournissant des valeurs aléatoires mais réalistes.
+
+L'exercice est : 
+* activer et lancer le TU plusieurs fois
+* détecter l'origine du problème
+* pointer la violation de Dependency Inversion
+* corriger la et exploiter la nouvelle architecture pour compléter la couverture de code en TDD
+
