@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 public class Sonde {
 
     public void preparerRecuperation(ModuleMartien moduleMartien) {
-        if (moduleMartien instanceof Helicoptere) { // Liskov
+        if (moduleMartien instanceof Helicoptere) {
             poserHelicoptere(moduleMartien);
         }
         moduleMartien.activerRecuperation();
