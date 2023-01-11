@@ -28,9 +28,9 @@ Une sonde, tournant autour de Mars, peut demander à chaque module de se mettre 
 * dans le cas de l'hélicoptère, celui-ci se pose alors au sol ;
 * activation d'un booléen "pretPourRecuperation" pour les deux modules.
 
-Ce programme a été écrit en TDD et possède donc une couverture à 100%. Cependant, 3 principes SOLID ne sont pas respectés.
+Ce programme a été écrit en TDD et possède donc une couverture à 100%. Cependant, 4 principes SOLID ne sont pas respectés.
 
 L'exercice est :
-* de détecter les 3 violations
+* de détecter les 4 violations
 * de rendre le programme SOLID ;
 * d'ajouter la direction "nord ouest", et faire avancer/reculer les deux modules suivant cette direction.
