@@ -8,8 +8,8 @@ class AlarmTest {
 
     @Test
     void foo() {
-        Alarm alarm = new Alarm();
-        // alarm.check();
+        Alarm alarm = new Alarm(new Sensor());
+        alarm.check();
         assertFalse(alarm.isAlarmOn());
     }
 }

@@ -5,9 +5,10 @@ package com.ntatc.katas.tire;
 
 import java.util.Random;
 
-public class Sensor {
+public class Sensor implements ISensor {
     public static final double OFFSET = 16;
 
+    @Override
     public double popNextPressurePsiValue() {
         double pressureTelemetryValue;
         pressureTelemetryValue = samplePressure();
