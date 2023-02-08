@@ -55,3 +55,18 @@ L'exercice est :
 * pointer la violation de Dependency Inversion
 * corriger la et exploiter la nouvelle architecture pour compléter la couverture de code en TDD
 
+## Lift controller
+
+Language Java - Package com.ntatc.katas.lift
+
+Ce kata permet d'appliquer l'approche TDD sur un sujet ludique : un ascenseur avec une représentation graphique programmée en SWING.
+
+Le programme :
+* affiche une représentation d'un ascenseur, des boutons d'appels (intérieurs et extérieurs)
+* les commandes de boutons ne provoquent rien pour l'instant
+
+L'exercice est :
+* de faire bouger cet ascenseur avec une approche petits pas en TDD
+
+
+
