@@ -39,6 +39,10 @@ L'exercice est :
 * de rendre le programme SOLID ;
 * d'ajouter la direction "nord ouest", et faire avancer/reculer les deux modules suivant cette direction.
 
+Solutions :
+* step 1 indiquant les violations + explications : https://github.com/ntdc/tech_dojos/tree/solution/mars/step1
+* step 2 avec une mission rendue SOLID : https://github.com/ntdc/tech_dojos/tree/solution/mars/step2
+
 ## Tire pressure monitoring
 
 Language Java - Package com.ntatc.katas.tire
@@ -55,6 +59,10 @@ L'exercice est :
 * pointer la violation de Dependency Inversion
 * corriger la et exploiter la nouvelle architecture pour compléter la couverture de code en TDD
 
+Solutions : 
+* step 1 avec la résolution de la violations Dependency Inversion : https://github.com/ntdc/tech_dojos/tree/solution/tire/step1
+* step 2 avec l'ajout du stub exploitant la nouvelle interface : https://github.com/ntdc/tech_dojos/tree/solution/tire/step2
+
 ## Lift controller
 
 Language Java - Package com.ntatc.katas.lift
@@ -68,5 +76,6 @@ Le programme :
 L'exercice est :
 * de faire bouger cet ascenseur avec une approche petits pas en TDD
 
-
+Solutions : 
+* suite à un dojo LevelUp, il manque l'affichage de la direction en haut : https://github.com/ntdc/tech_dojos/compare/solution/lift/step1
 
