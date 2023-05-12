@@ -11,14 +11,16 @@ import static java.util.Optional.empty;
 @Slf4j
 public class LiftController implements ILiftController {
 
+    private int currentFloor;
+    private final List<Call> calls = new ArrayList<>();
 
     public LiftController(int startFloor) {
-
+        this.currentFloor = startFloor;
     }
 
     @Override
     public int getCurrentFloor() {
-        return 0;
+        return this.currentFloor;
     }
 
     @Override
@@ -29,26 +31,50 @@ public class LiftController implements ILiftController {
 
     @Override
     public List<Call> getNextCalls() {
-        return new ArrayList<>();
+        return calls;
     }
 
     @Override
     public LiftEngineCommand onFloor() {
-        // TODO
-        return null;
+        if (isNextCallFloorAboveCurrentFloor()) {
+            currentFloor++;
+        } else {
+            currentFloor--;
+        }
 
+        return getLiftEngineCommand();
     }
+
 
     @Override
     public Optional<LiftEngineCommand> onDoorsClosed() {
-        // TODO
-        return Optional.empty();
+        calls.removeIf(call -> call.getFloor() == currentFloor);
+        if (getNextCalls().isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(getLiftEngineCommand());
     }
 
     @Override
     public Optional<LiftEngineCommand> call(Call call) {
-        // TODO
-        return Optional.empty();
+        calls.add(call);
+        return Optional.of(getLiftEngineCommand());
+    }
+
+    private LiftEngineCommand getLiftEngineCommand() {
+        if (getNextCalls().get(0).getFloor() == currentFloor) {
+            return LiftEngineCommand.OPEN_DOORS;
+        }
+
+        if (isNextCallFloorAboveCurrentFloor()) {
+            return LiftEngineCommand.GO_UP;
+        } else {
+            return LiftEngineCommand.GO_DOWN;
+        }
+    }
+
+    private boolean isNextCallFloorAboveCurrentFloor() {
+        return getNextCalls().get(0).getFloor() > currentFloor;
     }
 
 }
