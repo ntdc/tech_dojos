@@ -1,6 +1,6 @@
 package com.ntatc.katas.mars;
 
-public class Rover implements ModuleMartien {
+public class Rover implements ModuleMartien2D {
 
     private Direction direction;
 
@@ -14,49 +14,16 @@ public class Rover implements ModuleMartien {
     }
 
     public void avancer() {
-        switch (direction) {
-            case NORD:
-                position = new Position(position.getX(), position.getY() + 1, position.getZ());
-                break;
-            case SUD:
-                position = new Position(position.getX(), position.getY() - 1, position.getZ());
-                break;
-            case OUEST:
-                position = new Position(position.getX() - 1, position.getY(), position.getZ());
-                break;
-            default:
-                position = new Position(position.getX() + 1, position.getY(), position.getZ());
-        }
+        position = direction.getMouvement2D().avancer(this.position);
     }
 
     public void reculer() {
-        switch (direction) {
-            case NORD:
-                position = new Position(position.getX(), position.getY() - 1, position.getZ());
-                break;
-            case SUD:
-                position = new Position(position.getX(), position.getY() + 1, position.getZ());
-                break;
-            case OUEST:
-                position = new Position(position.getX() + 1, position.getY(), position.getZ());
-                break;
-            default:
-                position = new Position(position.getX() - 1, position.getY(), position.getZ());
-        }
-    }
-
-    @Override
-    public void monter() {
-        throw new UnsupportedOperationException("Un rover ne vole pas");
-    }
-
-    @Override
-    public void descendre() {
-        throw new UnsupportedOperationException("Un rover ne vole pas");
+        position = direction.getMouvement2D().reculer(this.position);
     }
 
     public void activerRecuperation() {
         pretPourRecuperation = true;
+        System.out.println("on est prêt");
     }
 
     @Override
