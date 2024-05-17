@@ -41,7 +41,8 @@ L'exercice est :
 
 Solutions :
 * step 1 indiquant les violations + explications : https://github.com/ntdc/tech_dojos/tree/solution/mars/step1
-* step 2 avec une mission rendue SOLID : https://github.com/ntdc/tech_dojos/tree/solution/mars/step2
+* step 2 - Résolution du Open/Close avec une stratégie basée sur une interface + ENUM : https://github.com/ntdc/tech_dojos/tree/solution/mars/step2
+* step 2 best : Résolution du Open/Close avec une interface fonctionnelle + ENUM (plus simple) : https://github.com/ntdc/tech_dojos/tree/solution/mars/step2Best
 
 ## Tire pressure monitoring
 
