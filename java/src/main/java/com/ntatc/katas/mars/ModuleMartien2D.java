@@ -1,16 +1,12 @@
 package com.ntatc.katas.mars;
 
-public interface ModuleMartien {
+public interface ModuleMartien2D {
 
     Position getPosition();
 
     void avancer();
 
     void reculer();
-
-    void monter();
-
-    void descendre();
 
     void activerRecuperation();
 
