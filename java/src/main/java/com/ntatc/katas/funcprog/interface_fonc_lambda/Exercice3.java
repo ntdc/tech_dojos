@@ -2,6 +2,7 @@ package com.ntatc.katas.funcprog.interface_fonc_lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * Exercice : affichage de chaque élément de la liste
@@ -15,7 +16,7 @@ public class Exercice3 {
         System.out.println("Sans :");
         sans();
 
-        System.out.println("\\|");
+        System.out.println();
 
         System.out.println("Avec :");
         avec();
@@ -38,5 +39,9 @@ public class Exercice3 {
         mots.add("bonjour");
         mots.add("monde");
         mots.add("java");
+
+        Consumer<String> afficherMot = mot -> System.out.println(mot);
+
+        mots.forEach(afficherMot);
     }
 }

@@ -2,6 +2,7 @@ package com.ntatc.katas.funcprog.interface_fonc_lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * Exercice : transformation en majuscules
@@ -32,8 +33,20 @@ public class Exercice1 {
         mots.add("monde");
         mots.add("java");
 
-        // TODO
+        // Interface fonctionnelle Function pour transformer en majuscules
+        Function<String, String> toUpperCase = s -> s.toUpperCase();
 
-        return null;
+        // Utilisation de la méthode map pour appliquer la transformation
+        List<String> result = transformerListe(mots, toUpperCase);
+
+        return result;
+    }
+
+    public static List<String> transformerListe(List<String> list, Function<String, String> fonction) {
+        List<String> result = new ArrayList<>();
+        for (String s : list) {
+            result.add(fonction.apply(s));  // Applique la transformation
+        }
+        return result;
     }
 }

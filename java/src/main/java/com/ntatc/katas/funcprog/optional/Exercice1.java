@@ -1,5 +1,7 @@
 package com.ntatc.katas.funcprog.optional;
 
+import java.util.Optional;
+
 /**
  * Exercice 1 : Remplacement des null par Optional
  * Objectif : Montrer les problèmes des null et introduire Optional.
@@ -12,32 +14,14 @@ package com.ntatc.katas.funcprog.optional;
 public class Exercice1 {
 
     public static void main(String[] args) {
-        String user = getUserById(2);
-        if (user != null) {
-            System.out.println("Utilisateur trouvé : " + user);
-        } else {
-            System.out.println("Utilisateur introuvable !");
-        }
+        Optional<String> user = getUserById(2);
+        System.out.println(user.orElse("Utilisateur introuvable !"));
     }
 
-    public static String getUserById(int id) {
+    public static Optional<String> getUserById(int id) {
         if (id == 1) {
-            return "Alice";
+            return Optional.of("Alice");
         }
-        return null;
+        return Optional.empty();
     }
-
-    /*
-    public Optional<String> getUserById(int id) {
-    if (id == 1) {
-        return Optional.of("Alice");
-    }
-    return Optional.empty();
-}
-
-public void main(String[] args) {
-    Optional<String> user = getUserById(2);
-    System.out.println(user.orElse("Utilisateur introuvable !"));
-}
-     */
 }

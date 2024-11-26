@@ -1,5 +1,7 @@
 package com.ntatc.katas.funcprog.interface_fonc_lambda;
 
+import java.util.function.BiFunction;
+
 /**
  * Exercice : Calculer une somme
  * <p>
@@ -21,8 +23,10 @@ public class Exercice5 {
         int a = 10;
         int b = 5;
 
-        // TODO
+        BiFunction<Integer, Integer, Integer> somme = (x, y) -> x + y;
 
-        return null;
+        int resultatSomme = somme.apply(a, b);
+
+        return resultatSomme;
     }
 }

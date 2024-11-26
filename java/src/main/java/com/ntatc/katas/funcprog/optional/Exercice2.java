@@ -1,5 +1,7 @@
 package com.ntatc.katas.funcprog.optional;
 
+import java.util.Optional;
+
 /**
  * Exercice 2 : Suppression des vérifications if redondantes
  * Objectif : Simplifier le code en évitant des vérifications manuelles.
@@ -11,25 +13,15 @@ package com.ntatc.katas.funcprog.optional;
 public class Exercice2 {
 
     public static void main(String[] args) {
-        String user = Exercice1.getUserById(2);
+        Optional<String> user = Exercice1.getUserById(2);
 
         printUser(user);
     }
 
-    public static void printUser(String user) {
-        if (user != null) {
-            System.out.println("Bonjour " + user + " !");
-        } else {
-            System.out.println("Aucun utilisateur trouvé.");
-        }
+    public static void printUser(Optional<String> user) {
+        user.ifPresentOrElse(
+                name -> System.out.println("Bonjour " + name + " !"),
+                () -> System.out.println("Aucun utilisateur trouvé.")
+        );
     }
-
-    /*
-    public void printUser(Optional<String> user) {
-    user.ifPresentOrElse(
-        name -> System.out.println("Bonjour " + name + " !"),
-        () -> System.out.println("Aucun utilisateur trouvé.")
-    );
-}
-     */
 }

@@ -2,6 +2,7 @@ package com.ntatc.katas.funcprog.interface_fonc_lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Exercice : filtrage des nombres pairs
@@ -38,8 +39,22 @@ public class Exercice2 {
         nombres.add(4);
         nombres.add(5);
 
-        // TODO
+        // Interface fonctionnelle Predicate pour filtrer les nombres pairs
+        Predicate<Integer> estPair = n -> n % 2 == 0;
 
-        return null;
+        // Utilisation de la méthode filter pour appliquer le Predicate
+        List<Integer> result = filtrerListe(nombres, estPair);
+
+        return result;
+    }
+
+    public static List<Integer> filtrerListe(List<Integer> list, Predicate<Integer> predicat) {
+        List<Integer> result = new ArrayList<>();
+        for (Integer n : list) {
+            if (predicat.test(n)) {
+                result.add(n);
+            }
+        }
+        return result;
     }
 }
