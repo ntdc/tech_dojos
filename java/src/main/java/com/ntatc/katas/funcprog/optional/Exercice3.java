@@ -24,17 +24,4 @@ public class Exercice3 {
         }
         return user;
     }
-
-    /*
-    public Optional<String> findUserById(int id) {
-    return getUserById(id);
-}
-
-public void main(String[] args) {
-    String user = findUserById(2)
-        .orElseThrow(() -> new IllegalArgumentException("Utilisateur non trouvé !"));
-    System.out.println(user);
-}
-     */
-
 }

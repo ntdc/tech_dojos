@@ -23,12 +23,4 @@ public class Exercice5 {
             }
         }
     }
-
-    /*public void processUser(int id) {
-        getUserById(id)
-                .map(String::toLowerCase)
-                .filter(name -> name.contains("a"))
-                .ifPresent(name -> System.out.println("Utilisateur valide : " + name));
-    }*/
-
 }

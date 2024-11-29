@@ -22,12 +22,4 @@ public class Exercice4 {
         }
         return null;
     }
-
-    /*
-    public Optional<String> getValidUser(Optional<String> user) {
-    return user.filter(name -> name.length() > 3)
-               .map(String::toUpperCase);
-}
-     */
-
 }

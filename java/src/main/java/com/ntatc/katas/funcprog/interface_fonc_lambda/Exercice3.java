@@ -10,7 +10,7 @@ import java.util.List;
  * (afficher chaque élément) sur chaque élément d'une liste.
  */
 public class Exercice3 {
-
+//
     public static void main(String[] args) {
         System.out.println("Sans :");
         sans();

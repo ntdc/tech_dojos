@@ -26,18 +26,4 @@ public class Exercice1 {
         }
         return null;
     }
-
-    /*
-    public Optional<String> getUserById(int id) {
-    if (id == 1) {
-        return Optional.of("Alice");
-    }
-    return Optional.empty();
-}
-
-public void main(String[] args) {
-    Optional<String> user = getUserById(2);
-    System.out.println(user.orElse("Utilisateur introuvable !"));
-}
-     */
 }

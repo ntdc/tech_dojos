@@ -23,13 +23,4 @@ public class Exercice2 {
             System.out.println("Aucun utilisateur trouvé.");
         }
     }
-
-    /*
-    public void printUser(Optional<String> user) {
-    user.ifPresentOrElse(
-        name -> System.out.println("Bonjour " + name + " !"),
-        () -> System.out.println("Aucun utilisateur trouvé.")
-    );
-}
-     */
 }
