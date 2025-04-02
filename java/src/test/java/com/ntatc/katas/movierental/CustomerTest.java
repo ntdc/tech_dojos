@@ -20,24 +20,8 @@ public class CustomerTest {
         assertThat(attendu).isEqualTo(customer.statement());
     }
 
-    /**
-     * TODO Déplacer
-     */
-    @Test
-    public void should_return_statement_with_1_rental_REGULAR_for_2_days() {
-        // GIVEN
-        Customer customer = new Customer("Robert Redford");
-        Movie movie = new Movie("Swat", Movie.REGULAR);
-        Rental rental = new Rental(movie, 2);
-        customer.addRental(rental);
-
-        String attendu = "Rental Record for Robert Redford\n" +
-                "\tSwat\t2.0\n" +
-                "Amount owed is 2.0\n" +
-                "You earned 1 frequent renter points";
-
-        // WHEN
-        // THEN
-        assertThat(attendu).isEqualTo(customer.statement());
-    }
+    // String attendu = "Rental Record for X\n" +
+    //         "\tX\tX.X\n" +
+    //         "Amount owed is X.X\n" +
+    //         "You earned X frequent renter points";
 }
