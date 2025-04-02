@@ -80,3 +80,27 @@ L'exercice est :
 Solutions : 
 * suite à un dojo LevelUp, il manque l'affichage de la direction en haut : https://github.com/ntdc/tech_dojos/compare/solution/lift/step1
 
+## Movie Rental - Location de films
+
+### Introduction
+
+Ce kata permet de pratiquer la refactorisation de code avec un harnais de tests via un sujet simple : de la location de films.
+
+Vous êtes un développeur qui débarque sur le projet et qui doit l'améliorer sans changer le comportement de base.
+
+Les composants du programme :
+* Le film (titre et type)
+* La location (film et temps de location)
+* Le client (nom, film(s) loué(s) et générateur de reçu de location) (cible du refacto)
+
+### Objectifs :
+- Refacto (SOLID + Optimisation)
+- Evolution : Nouvelle catégorie avec tarif, points fidélité, etc.
+
+## Crédits :
+- Yoann P
+- Pierre K
+- Theo C
+- Mickaël V
+- Sabah R
+- Emmanuel F
