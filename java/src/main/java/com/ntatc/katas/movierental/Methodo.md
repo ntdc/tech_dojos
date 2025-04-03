@@ -5,8 +5,8 @@
 2. Pas de R.G. ou de documentation du comportement attendu ? (Pas le temps, "la vérité est le code existant")
 3. Rappel de l'objectif (Tester et Refacto)
 4. Définition du refacto (-> Pas de modification du comportement, pas de régression, pas de changement des APIs)
-   41. Pas de refacto sans test
-   42. Pas de refacto sans couverture "suffisante"
+   * Pas de refacto sans test
+   * Pas de refacto sans couverture "suffisante"
 5. Ecrire un test cobaye avec une assertion fausse/échec (Formateur) -> passage "au vert"/succès avec un copier/coller du résultat actuel
 6. Définition de la couverture de test
 7. Couvrir le début du code (1 ou 2 tests)
@@ -19,11 +19,11 @@
 2. Amener à effectuer les corrections proposées par Sonar
 3. Citer les principes SOLID (dont Single Responsability et Open/Close)
 4. Faire découper la méthode statement() en trois partie, une pour chaque morceau du reçu (Header/Footer/Body)
-    41. Header (Génération simple)
-    42. Body (Calcul du prix, incrémentation points fidélité, liste des réservations)
-        Plusieurs boucles mais découpage SRP correct
-    43. Footer (total prix, total points de fidélité)
-        Le footer nécessite les données calculés par le body, il faut dupliquer le code des boucles, ce n'est pas grave car le code dupliqué n'est pas massif, bien qu'il devienne légèrement plus gros, le code complet restera plus lisible qu'avant
+   * Header (Génération simple)
+   * Body (Calcul du prix, incrémentation points fidélité, liste des réservations)
+       Plusieurs boucles mais découpage SRP correct
+   * Footer (total prix, total points de fidélité)
+       Le footer nécessite les données calculés par le body, il faut dupliquer le code des boucles, ce n'est pas grave car le code dupliqué n'est pas massif, bien qu'il devienne légèrement plus gros, le code complet restera plus lisible qu'avant
 5. (Le calcul des points de fidélité n'est pas pertinent dans la partie body -> Retirer de la génération du body)
 
 ## Evolution
