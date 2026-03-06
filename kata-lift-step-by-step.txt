@@ -1,3 +1,17 @@
+Etapes TDD :
+1/ Quand l'ascenseur est à un étage, alors l'étage est affiché
+2/ Quand un appel est fait, alors l'appel est ajouté à une liste d'appels
+3/ Quand on appelle l'ascenseur à un étage où il est présent, alors les portes s'ouvrent
+4/ Quand un appel fait monter l'ascenseur, alors l'ascenseur monte
+5/ Quand un appel fait descendre l'ascenseur, alors l'ascenseur descend
+6/ Quand un appel pour monter est effectué, alors l'étage courant est incrémenté
+7/ Quand un appel pour descendre est effectué, alors l'étage courant est décrémenté
+8/ Quand l'ascenseur arrive à l'étage demandé, alors les portes s'ouvrent
+9/ Quand l'ascenseur monte et n'est pas arrivé à l'étage demandé, alors il continue de monter
+10/ Quand l'ascenseur descend et n'est pas arrivé à l'étage demandé, alors il continue de descendre
+11/ Quand deux appels pour monter sont effectués sur différents étages, alors l'ascenseur s'arrête aux deux étages
+
+Détails des méthodes de tests et du code métier lié :
 
 1/ Quand l'ascenseur est à un étage, alors l'étage est affiché
 givenStartFloor1WhenGetCurrentFlowThenFloor1IsReturned
