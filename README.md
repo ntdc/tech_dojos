@@ -78,6 +78,7 @@ L'exercice est :
 * de faire bouger cet ascenseur avec une approche petits pas en TDD
 
 Solutions : 
+* proposition d'étapes dans la rédaction des tests : https://github.com/ntdc/tech_dojos/blob/solution/lift/step1/kata-lift-step-by-step.txt
 * suite à un dojo LevelUp, il manque l'affichage de la direction en haut : https://github.com/ntdc/tech_dojos/compare/solution/lift/step1
 
 ## Movie Rental - Location de films
