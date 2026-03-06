@@ -1,0 +1,92 @@
+
+1/ Quand l'ascenseur est à un étage, alors l'étage est affiché
+givenStartFloor1WhenGetCurrentFlowThenFloor1IsReturned
+	private int currentFloor;
+	public LiftController(int startFloor) {
+	  this.currentFloor = startFloor;
+	}
+
+	public int getCurrentFloor() {
+	  return currentFloor;
+	}
+
+2/ Quand un appel est fait, alors l'appel est ajouté à une liste d'appels
+givenNewCallWhenGetNextCallsThenCallIsPresent
+	private List<Call> nextCalls = new ArrayList<>();
+
+	public List<Call> getNextCalls() {
+		return nextCalls;
+	}
+
+	call() -> 
+	nextCalls.add(call);
+
+3/ Quand on appelle l'ascenseur à un étage où il est présent, alors les portes s'ouvrent 
+givenFloorWhenCallFromTheSameThenOpenDoor
+	call() -> 
+	if (currentFloor == call.getFloor()){
+	 	return of(LiftEngineCommand.OPEN_DOORS);
+	}
+
+4/ Quand un appel fait monter l'ascenseur, alors l'ascenseur monte
+givenCallFromAboveWhenCallThenMoveUp
+	call() -> 
+	if (currentFloor < nextCalls.get(0).getFloor()) {
+        return of(LiftEngineCommand.GO_UP);
+    }
+
+5/ Quand un appel fait descendre l'ascenseur, alors l'ascenseur descend
+givenCallFromBellowWhenCallThenMoveDown
+	call() -> 
+	...
+	else {
+         return of(LiftEngineCommand.GO_DOWN);
+      }
+
+6/ Quand un appel pour monter est effectué, alors l'étage courant est incrémenté 
+givenMovingUpCallWhenOnFloorThenCurrentFloorIsIncreased
+	onFloor() -> 
+	if (nextCalls.get(0).getFloor() > currentFloor) {
+         currentFloor++;
+      }
+
+7/ Quand un appel pour descendre est effectué, alors l'étage courant est décrémenté
+givenMovingDownCallWhenOnFloorThenFloorIsDecreased
+	onFloor() -> 
+	...
+	}else {
+	 	currentFloor--;
+	}
+8/ Quand l'ascenseur arrive à l'étage demandé, alors les portes s'ouvrent
+givenCallFloor1WhenOnFloor1ThenOpenDoor
+	onFloor() -> 
+	if (nextCalls.get(0).getFloor() == currentFloor) {
+	    log.info("Opening doors");
+	    return LiftEngineCommand.OPEN_DOORS;
+	}
+9/ Quand l'ascenseur monte et n'est pas arrivé à l'étage demandé, alors il continue de monter
+givenMovingUpWhenFloorNotReachedThenKeepsGoUp
+	onFloor() -> 
+	if (currentFloor < nextCalls.get(0).getFloor()) {
+        return LiftEngineCommand.GO_UP;
+    }
+
+10/ Quand l'ascenseur descend et n'est pas arrivé à l'étage demandé, alors il continue de descendre
+givenMovingDownWhenFloorNotReachedThenKeepsGoDown
+	onFloor() ->
+	...
+	else {
+         return LiftEngineCommand.GO_DOWN;
+      } 
+###### Refactoring avec création méthode depuis onFloor() -> extract méthode -> getLiftEngineCommand() 
+
+
+11 / Quand deux appels pour monter sont effectués sur différents étages, alors l'ascenseur s'arrête aux deux étages
+givenTwoUpCallsWhenMovingThenMoveTwiceAndStop
+	onDoorClose ->
+		nextCalls.removeIf(call -> call.getFloor() == currentFloor);
+      	log.info("Remaining calls: " + nextCalls);
+      	if (nextCalls.isEmpty()) {
+         return empty();
+      	}
+      	return of(getLiftEngineCommand());
